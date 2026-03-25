@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nyxx — Conditions d'Utilisation</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #13161e;
+    --border: #1e2330;
+    --accent: #5865f2;
+    --accent2: #eb459e;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --mono: 'Space Mono', monospace;
+    --sans: 'Syne', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  header {
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #fff 40%, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .meta {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  main {
+    padding: 3rem 0 5rem;
+  }
+
+  .section {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent), var(--accent2));
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section:nth-child(1) { animation-delay: 0.05s; }
+  .section:nth-child(2) { animation-delay: 0.1s; }
+  .section:nth-child(3) { animation-delay: 0.15s; }
+  .section:nth-child(4) { animation-delay: 0.2s; }
+  .section:nth-child(5) { animation-delay: 0.25s; }
+  .section:nth-child(6) { animation-delay: 0.3s; }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    color: #9ca3b0;
+    font-size: 0.95rem;
+  }
+
+  ul {
+    list-style: none;
+    margin-top: 0.5rem;
+  }
+
+  ul li {
+    color: #9ca3b0;
+    font-size: 0.95rem;
+    padding: 0.3rem 0 0.3rem 1.2rem;
+    position: relative;
+  }
+
+  ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 0;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="badge">Bot Discord</div>
+    <h1>Conditions<br>d'Utilisation</h1>
+    <p class="meta">NYXX · Dernière mise à jour : Mars 2025 · App ID: 1446084663763271690</p>
+  </header>
+
+  <main>
+    <div class="section">
+      <div class="section-num">01 / ACCEPTATION</div>
+      <h2>Acceptation des conditions</h2>
+      <p>En ajoutant Nyxx à votre serveur Discord ou en interagissant avec ses commandes, vous acceptez les présentes Conditions d'Utilisation. Si vous n'acceptez pas ces conditions, veuillez retirer le bot de votre serveur.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">02 / UTILISATION</div>
+      <h2>Utilisation autorisée</h2>
+      <p>Nyxx est fourni à des fins légitimes d'administration et de gestion de serveurs Discord. Vous vous engagez à :</p>
+      <ul>
+        <li>Ne pas utiliser le bot à des fins illégales ou malveillantes</li>
+        <li>Ne pas tenter de contourner ses mécanismes de sécurité</li>
+        <li>Ne pas abuser des commandes de manière à nuire aux autres utilisateurs</li>
+        <li>Respecter les Conditions d'Utilisation de Discord</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-num">03 / DONNÉES</div>
+      <h2>Données collectées</h2>
+      <p>Nyxx collecte uniquement les <strong style="color:#fff">configurations de serveur</strong> nécessaires à son fonctionnement (paramètres, préférences d'administration). Aucune donnée personnelle d'utilisateur n'est collectée ou stockée.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">04 / DISPONIBILITÉ</div>
+      <h2>Disponibilité du service</h2>
+      <p>Nyxx est fourni « tel quel », sans garantie de disponibilité continue. Nous nous réservons le droit de modifier, suspendre ou interrompre le service à tout moment, sans préavis.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">05 / RESPONSABILITÉ</div>
+      <h2>Limitation de responsabilité</h2>
+      <p>Les développeurs de Nyxx ne sauraient être tenus responsables de dommages directs ou indirects résultant de l'utilisation ou de l'impossibilité d'utiliser le bot.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">06 / MODIFICATIONS</div>
+      <h2>Modifications des conditions</h2>
+      <p>Ces conditions peuvent être modifiées à tout moment. L'utilisation continue du bot après modification vaut acceptation des nouvelles conditions.</p>
+    </div>
+  </main>
+
+  <footer>
+    <span><span class="dot"></span>Nyxx · Bot Discord</span>
+    <span>App ID: 1446084663763271690</span>
+  </footer>
+</div>
+</body>
+</html>
